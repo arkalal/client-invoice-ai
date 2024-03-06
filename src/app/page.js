@@ -1,12 +1,7 @@
 import React from "react";
-import InvoiceChat from "../../components/InvoiceChat/InvoiceChat";
 
-const Home = () => {
-  return (
-    <div>
-      <InvoiceChat />
-    </div>
-  );
+const page = () => {
+  return <div>page</div>;
 };
 
-export default Home;
+export default page;
