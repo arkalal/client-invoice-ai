@@ -1,0 +1,67 @@
+// InvoiceCard.module.scss
+
+.invoiceCard {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 1rem;
+  width: 300px; // You can adjust the width as per your layout
+
+  .cardHeader,
+  .cardBody,
+  .cardFooter {
+    padding: 1rem;
+  }
+
+  .cardHeader {
+    background: #f7f7f7;
+    border-bottom: 1px solid #eee;
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    p {
+      margin: 0;
+      color: #666;
+    }
+  }
+
+  .cardBody {
+    h4 {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .product {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+
+      p {
+        margin: 0.25rem 0;
+        font-size: 0.9rem;
+        color: #666;
+      }
+    }
+  }
+
+  .cardFooter {
+    background: #f7f7f7;
+    border-top: 1px solid #eee;
+
+    p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .totalDue {
+      font-weight: bold;
+      color: #c00;
+    }
+  }
+}
