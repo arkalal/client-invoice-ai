@@ -1,10 +1,10 @@
-import InvoiceData from "../../../../models/invoiceData";
+import { NextResponse } from "next/server";
 import connectMongoDB from "../../../../utils/mongoDB";
+import InvoiceData from "../../../../models/invoiceData";
 import {
   upsertToPinecone,
   vectorizeText,
 } from "../../../../utils/pineconeConfig";
-import { NextResponse } from "next/server";
 
 export async function POST(req) {
   // Parse the incoming invoice data
