@@ -3,8 +3,12 @@ import axios from "../../../axios/api";
 import InvoiceSheet from "../../../components/InvoiceSheet/InvoiceSheet";
 
 const getInvoice = async () => {
-  const res = await axios.get("invoices");
-  return res.data;
+  try {
+    const res = await axios.get("invoices");
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const InvoiceData = async () => {
