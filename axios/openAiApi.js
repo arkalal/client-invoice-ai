@@ -2,7 +2,7 @@ import axios from "axios";
 import { openAiApiKey } from "../constant";
 
 const instance = axios.create({
-  baseURL: `https://invoice-ai-three.vercel.app/api/`,
+  baseURL: `http://localhost:3000/api/`,
   headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${openAiApiKey}`,
