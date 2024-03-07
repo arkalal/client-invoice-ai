@@ -3,7 +3,7 @@ import { openAiApiKey } from "../constant";
 import { baseUrlStaging, baseUrlTest } from "./baseUrl";
 
 const instance = axios.create({
-  baseURL: `${baseUrlTest}/api/`,
+  baseURL: `${baseUrlStaging}/api/`,
   headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${openAiApiKey}`,
