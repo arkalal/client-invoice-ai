@@ -32,7 +32,8 @@ export async function POST(req) {
           ],
         },
       ],
-      max_tokens: 900,
+      temperature: 0.9,
+      max_tokens: 1000,
     });
 
     return NextResponse.json(response.choices[0].message.content);
