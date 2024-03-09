@@ -11,8 +11,8 @@ const getInvoice = async () => {
   }
 };
 
-const InvoiceData = async () => {
-  const invoice = await getInvoice();
+const InvoiceData = () => {
+  const invoice = getInvoice();
   console.log("invoice", invoice);
   return (
     <div>
