@@ -4,7 +4,8 @@ import InvoiceSheet from "../../../components/InvoiceSheet/InvoiceSheet";
 const InvoiceData = () => {
   return (
     <div>
-      <InvoiceSheet />
+      {/* <InvoiceSheet /> */}
+      <p>test</p>
     </div>
   );
 };
