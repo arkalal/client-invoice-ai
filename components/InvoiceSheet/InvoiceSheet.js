@@ -9,19 +9,14 @@ import axios from "../../axios/api";
 const InvoiceSheet = () => {
   const [Invoice, setInvoice] = useState(null);
 
-  useEffect(() => {
-    const getInvoice = async () => {
-      try {
-        const res = await axios.get("invoices");
-        return res.data;
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    const invoiceData = getInvoice();
-    setInvoice(invoiceData);
-  }, []);
+  const getInvoice = async () => {
+    try {
+      const res = await axios.get("invoices");
+      setInvoice(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const headers = [
     { label: "Invoice ID", key: "_id" },
@@ -72,6 +67,9 @@ const InvoiceSheet = () => {
       <CSVLink data={csvData} headers={headers} filename="invoices.csv">
         Export to Excel
       </CSVLink>
+
+      <button onClick={getInvoice}>Get Invoice data</button>
+
       <div className={styles.invoiceCards}>
         {Invoice.map((item, index) => {
           return (
