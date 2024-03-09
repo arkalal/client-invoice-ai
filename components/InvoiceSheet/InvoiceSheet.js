@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./InvoiceSheet.module.scss";
 import InvoiceCard from "../InvoiceCard/InvoiceCard";
 import axios from "../../axios/api";
@@ -8,19 +8,21 @@ import axios from "../../axios/api";
 const InvoiceSheet = () => {
   const [Invoice, setInvoice] = useState(null);
 
-  const getInvoice = async () => {
-    try {
-      const res = await axios.get("invoices");
-      setInvoice(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  useEffect(() => {
+    const getInvoice = async () => {
+      try {
+        const res = await axios.get("invoices");
+        setInvoice(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getInvoice();
+  }, []);
 
   return (
     <div className={styles.InvoiceSheet}>
-      <button onClick={getInvoice}>Get Invoice Data</button>
-
       <div className={styles.invoiceCards}>
         {Invoice &&
           Invoice.map((item, index) => {
