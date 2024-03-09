@@ -4,20 +4,9 @@ import React, { useState } from "react";
 import styles from "./InvoiceSheet.module.scss";
 // import { CSVLink } from "react-csv";
 import InvoiceCard from "../InvoiceCard/InvoiceCard";
-import axios from "../../axios/api";
 
-const InvoiceSheet = () => {
-  const [Invoice, setInvoice] = useState(null);
-
-  const getInvoice = async () => {
-    try {
-      const res = await axios.get("invoices");
-      setInvoice(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+const InvoiceSheet = ({ invoice }) => {
+  // const [Invoice, setInvoice] = useState(null);
   // const headers = [
   //   { label: "Invoice ID", key: "_id" },
   //   { label: "Currency", key: "currency" },
@@ -68,11 +57,9 @@ const InvoiceSheet = () => {
         Export to Excel
       </CSVLink> */}
 
-      <button onClick={getInvoice}>Get Invoice data</button>
-
       <div className={styles.invoiceCards}>
-        {Invoice &&
-          Invoice.map((item, index) => {
+        {invoice &&
+          invoice.map((item, index) => {
             return (
               <div key={index}>
                 <InvoiceCard invoice={item} />
